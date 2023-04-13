@@ -521,40 +521,6 @@ function DoesDeviceObjectExistAzureAD
 }
 
 <#
-    Get-FreshTokenIfNeeded
-#>
-function Get-FreshTokenIfNeeded
-{
-    <#.SYNOPSIS
-        Re-authenticates if token is nearing expiry.
-
-    .DESCRIPTION
-        Checks current token and re-authenticates if nearing expiry. If refreshed
-        so is the authorization header cache.
-    #>
-    $tokenExpiry = $script:AuthenticationResult.ExpiresOn
-    $difference = $tokenExpiry.Subtract([System.DateTime]::UtcNow)
-    $minutesBetween = $difference.minutes
-
-    # If less than 30 minutes left on token we'll refresh
-    if ($minutesBetween -lt 30)
-    {
-        $script:AuthenticationResult = `
-            Get-MsalToken -ClientId $script:clientId `
-            -TenantId $script:Tenant `
-            -Scope $script:resourceUrl `
-            -RedirectUri $script:redirectUri `
-            -LoginHint $script:loginHint `
-            -Silent -ForceRefresh
-
-        $script:authHeader = @{
-            'Content-Type'='application/json'
-            'Authorization'=$script:AuthenticationResult.CreateAuthorizationHeader()
-            }
-    }
-}
-
-<#
     DiagLog
 #>
 function DiagLog
