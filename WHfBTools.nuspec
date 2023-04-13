@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>WHfBTools</id>
+    <version>1.0.3</version>
+    <authors>Microsoft Corporation</authors>
+    <owners>Microsoft Corporation</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://aka.ms/WHfBTools</projectUrl>
+    <description>WHfBTools is a Windows PowerShell module that is used to query the state of Windows Hello For Business (WHfB) keys in both Azure AD and in on-premises Active Directory. For more information please see the individual cmdlet help displays, or https://aka.ms/WHfBTools.</description>
+    <releaseNotes></releaseNotes>
+    <copyright>(c) 2019 Microsoft. All rights reserved.</copyright>
+    <tags>Azure AzureAD AAD ActiveDirectory Active-Directory AD WHfB ROCA Windows PSEdition_Desktop PSModule PSIncludes_Function PSFunction_Get-ADWHfBKeys PSFunction_Remove-ADWHfBKey PSFunction_Get-AzureADWHfBKeys PSFunction_Remove-AzureADWHfBKey PSCommand_Get-ADWHfBKeys PSCommand_Remove-ADWHfBKey PSCommand_Get-AzureADWHfBKeys PSCommand_Remove-AzureADWHfBKey</tags>
+  </metadata>
+</package>
